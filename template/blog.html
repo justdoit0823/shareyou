@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="编程，篮球,linux,tcp/ip,其它" />
+<meta name="description" content="记录，分享，交流。" />
+<meta name="author" content="Just do it" />
+<meta name="copyright" content="Just do it" />
+<title>for more details...</title>
+<link rel="stylesheet" type="text/css" href="{{static_url('css/bootstrap.css')}}">
+<link rel="stylesheet" type="text/css" href="{{static_url('css/common.css')}}">
+<script src="{{static_url('js/jquery-1.7.2.js')}}"></script>
+<style type="text/css">
+    .bloglist {margin:5px 30px;}
+    .blogli {padding:30px 10px;border-bottom:#138642 1px dashed;}
+    .bloglititle {font-weight:bold;}
+    .bloglipart {margin:10px;color:#2478a4;line-height:20px;}
+    .blogliabout {margin:10px;}
+    .blogliauthor {text-decoration:none;}
+    .bloglitime {margin:0 20px;}
+    .blogliview {margin:0 10px;}
+    .bloglireview {margin:0 10px;}
+</style>
+</head>
+<body class="daynight">
+  <div class="container">
+    {{modules.Header(cuser)}}
+    <div id="indexlist" class="idxlist">
+      <ul>
+	<li class="idxlistli fl"><a href="/">Home</a></li>
+	<li class="idxlistli fl"><a href="/download">下载</a></li>
+	<li class="idxlistli fl"><a href="/about">关于</a></li>
+	<li class="idxlistli fl"><a href="/contact">联系</a></li>
+      </ul>
+    </div>
+    <div class="bloglist">
+      {% for blog in blogs %}
+        {{modules.BlogIndex(blog)}}
+      {% end %}
+    </div>
+  </div>
+</body>
+</html>

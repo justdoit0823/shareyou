@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="编程，篮球,linux,tcp/ip,其它" />
+<meta name="description" content="记录，分享，交流。" />
+<meta name="author" content="Just do it" />
+<meta name="copyright" content="Just do it" />
+<title>for more details...</title>
+<link rel="stylesheet" type="text/css" href="{{static_url('css/bootstrap.css')}}">
+<link rel="stylesheet" type="text/css" href="{{static_url('css/common.css')}}">
+<script src="{{static_url('js/jquery-1.7.2.js')}}"></script>
+<style type="text/css">
+   .abcontent {margin:40px;}
+   .ablable {margin:10px;font-size:20px;}
+   .abdetail {margin:15px 25px;line-height:30px;}
+</style>
+</head>
+<body class="daynight">
+  <div class="container">
+    {{modules.Header(cuser)}}
+    <div id="indexlist" class="idxlist">
+      <ul>
+	<li class="idxlistli fl"><a href="/">Home</a></li>
+	<li class="idxlistli fl"><a href="/blog">博客</a></li>
+	<li class="idxlistli fl"><a href="/download">下载</a></li>
+	<li class="idxlistli fl"><a href="/about">关于</a></li>
+      </ul>
+    </div>
+    <div class="abcontent">
+      <p class="ablable">我</p>
+      <div class="abdetail">
+        自认为GEEK一个
+      </div>
+    </div>
+    <div class="abcontent">
+      <p class="ablable">社区联络</p>
+      <div class="abdetail">
+        Email: justdoit920823@gmail.com
+      </div>
+      <div class="abdetail">
+        微博: http://weibo.com/yusenbin920823
+      </div>
+      <div class="abdetail">
+        github: http://github.com/justdoit0823
+      </div>
+    </div>
+    <div class="abcontent">
+      <p class="ablable">兴趣爱好</p>
+      <div class="abdetail">
+        Linux网络及系统研究
+      </div>
+      <div class="abdetail">
+        C,Python编程
+      </div>
+      <div class="abdetail">
+        篮球,看书
+      </div>
+    </div>
+    {{modules.Footer()}}
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".icon-remove-circle").click(function(){
+          $(".abtopbrowsertip").fadeOut(200);
+        })
+      })
+    </script>
+  </div>
+</body>
+</html>

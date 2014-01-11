@@ -1,0 +1,11 @@
+<div id="indextop" class="idxtop">
+  <p class="globalsign fl">大道求同，根之于质</p>
+  <p class="userstate fr">
+    {% if user %}
+    <span>{{user.account}} | </span>
+    <a href="/user/action/logout?next={{request.uri}}" class="">退出</a>
+    {% else %}
+    <a href="/user/action/login?next={{request.uri}}" class="">登陆</a>
+    {% end %}
+  </p>
+</div>

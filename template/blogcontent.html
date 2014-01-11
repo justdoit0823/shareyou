@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="编程，篮球,linux,tcp/ip" />
+<meta name="description" content="记录，分享，交流。" />
+<meta name="author" content="Justdoit" />
+<meta name="copyright" content="Justdoit" />
+<title>{{blog.title}}</title>
+<link rel="stylesheet" type="text/css" href="{{static_url('css/bootstrap.css')}}">
+<link rel="stylesheet" type="text/css" href="{{static_url('css/common.css')}}">
+<script src="../static/js/jquery-1.7.2.js"></script>
+<style type="text/css">
+    .bcdetail {margin:20px;}
+    .bctitle {margin-left:20px;font-size:20px;font-weight:bold;}
+    .bchtml {margin:20px 30px;line-height:20px;}
+    .bcabout {margin:10px 0;}
+    .bclabelinfo {margin:10px 0px;line-height:20px;height:20px;}
+    .bcaboutauthor {margin:10px 40px;padding:5px 0px;background:#48a;height:100px;}
+    .bcreviewpart {}
+    .reviewlist {margin:20px 40px;}
+    .reviewlist li {list-style:none;}
+    .reviewtitle {margin:10px;line-height:20px;}
+    .reviewcontent {margin:10px 40px;line-height:20px;font-weight:bold;}
+    .bcreviewarea {margin:20px 40px;}
+    .nologinreview {margin:20px 40px;}
+    .bcreviewarea textarea {margin-left:35px;height:100px;width:400px;}
+    .bcreviewarea button {margin:20px 40px;width:150px;height:50px;}
+</style>
+</head>
+<body class="daynight"> 
+  <div class="container">
+    {{modules.Header(cuser)}}
+    <div id="indexlist" class="idxlist">
+      <ul>
+	<li class="idxlistli2 fl"><a href="/">Home</a></li>
+	<li class="idxlistli2 fl"><a href="/blog">博客</a></li>
+	<li class="idxlistli2 fl"><a href="/download">下载</a></li>
+	<li class="idxlistli2 fl"><a href="/about">关于</a></li>
+	<li class="idxlistli2 fl"><a href="/contact">联系</a></li>
+      </ul>
+    </div>
+    <div class="bcdetail">
+      <p class="bctitle">{{blog.title}}</p>
+      <div class="bchtml">
+	{{blog.content}}
+      </div>
+      <div class="bcabout">
+        <!--<div class="bcaboutinfo">
+          <div class="fl bctimeinfo">
+            <span class="icon-time"></span>
+            <span>2013:07:22 09:26:00</span>
+          </div>
+          <div class="fr bcshareinfo">
+            <span class="icon-share"></span>
+          </div>
+          <div class="fr bcreviewinfo">
+            <span class="icon-comment"></span>
+            <span>10</span>
+          </div>
+          <div class="fr bcviewinfo">
+            <span class="icon-eye-open"></span>
+            <span>20</span>
+          </div>
+        </div>-->
+        
+        <div class="bcaboutauthor">
+          <p class="bclink"><span class="spantip">本文链接:</span>http://www.shareyou.net.cn/user/blog/{{blog.id}}(转载请注明出处)</p>
+          <p class="bcauthorname"><span class="spantip">作者:</span>{{blog.account}}</p>
+          <p class="bcauthorsc"><span class="spantip">Email:</span>{{blog.email}}</p>
+          <!--<div class="bclabelinfo">
+            <span class="spantip">文章标签:</span>
+            <span class="spanlabel">篮球</span>
+            <span class="spanlabel">nba</span>
+            <span class="spanlabel">总决赛</span>
+            <span class="spanlabel">马刺</span>
+            <span class="spanlabel">邓肯</span>
+          </div>-->
+        </div>
+      </div>
+    </div>
+    <div class="bcreviewpart">
+      <div class="reviewlist">
+	<ul>
+	  {% for row in rows %}
+	  <li>
+	    <p class="reviewtitle">{{row.account}} 于{{row.time}} 写下:<p>
+	    <p class="reviewcontent">{{row.content}}</p>
+	  </li>
+	  {% end %}
+	</ul>
+      </div>
+      <div class="bcreviewarea">
+	<form method="post" action="/writeblog">
+	  {% if not cuser %}
+	  <input type="text" name="email" required="" placeholder="留个邮箱呗" class="nologinreview"  /><br>
+	  {% end %}
+	  <textarea required="" placeholder="请写下评论"></textarea>
+	  <button class="btn btn-primary btn-block" type="submit">评论</button>
+	</form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

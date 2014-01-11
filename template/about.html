@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="编程，篮球,linux,tcp/ip,其它" />
+<meta name="description" content="记录，分享，交流。" />
+<meta name="author" content="Just do it" />
+<meta name="copyright" content="Just do it" />
+<title>for more details...</title>
+<link rel="stylesheet" type="text/css" href="{{static_url('css/bootstrap.css')}}">
+<link rel="stylesheet" type="text/css" href="{{static_url('css/common.css')}}">
+<script src="{{static_url('js/jquery-1.7.2.js')}}"></script>
+<style type="text/css">
+   .abcontent {margin:40px;}
+   .ablable {margin:10px;font-size:20px;font-weight:bold;}
+   .abdetail {margin:15px 25px;line-height:30px;}
+</style>
+</head>
+<body class="daynight">
+  <div class="container">
+    {{modules.Header(cuser)}}
+    <div id="indexlist" class="idxlist">
+      <ul>
+	<li class="idxlistli fl"><a href="/">Home</a></li>
+	<li class="idxlistli fl"><a href="/blog">博客</a></li>
+	<li class="idxlistli fl"><a href="/download">下载</a></li>
+	<li class="idxlistli fl"><a href="/contact">联系</a></li>
+      </ul>
+    </div>
+    <div class="abcontent">
+      <p class="ablable">关于我们</p>
+      <div class="abdetail">
+        快毕业了大学生，觉着做网站好玩，就玩玩。同时，也能记录记录平时的一些东西，自己看看。别人要是看也就看，反正在这儿。对于想搞点技术的来说，有个自己的网站写点东西也是件不错的事，完全是乐趣，技术本身就是乐趣。
+      </div>
+    </div>
+    <div class="abcontent">
+      <p class="ablable">关于社区</p>
+      <div class="abdetail">
+        分享，交流，有乐找乐，没乐说乐。
+      </div>
+    </div>
+    <div class="abcontent">
+      <p class="ablable">其它</p>
+      <div class="abdetail">
+        有人总问我以后这个网站怎么办？我就觉得该怎么办就怎么办，就是为着玩，还能怎么办。。赚钱什么的真没想过，我最讨厌广告了，Adblock plus是必备，所以基本上是费劲了。
+      </div>
+    </div>
+    {{modules.Footer()}}
+  </div>
+</body>
+</html>
