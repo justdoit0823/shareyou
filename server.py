@@ -125,7 +125,7 @@ class LoginHandler(BaseHandler):
                      up_lgsql="update userstatus set ip='%s',time='%s' where account='%s'"%(ip,at,result.account)
                  self.db.execute(up_lgsql)
                  self.set_secure_cookie("user",result.account.encode("utf-8"),7)
-                 self.redirect(goto)
+                 return self.redirect(goto)
             else:
                  tip="请完成邮箱激活"
                  #json=dict(msg=tip,goto='/user/action/login')
@@ -216,8 +216,10 @@ class MyApplication(web.Application):
         static_path=os.path.join(os.path.dirname(sys.argv[0]),"static"),
         ui_modules=MODULES,
         gzip=True,
+        debug=False,
+        autoescape=None
         )
-        web.Application.__init__(self,HandlerList,debug=False,**settings)
+        web.Application.__init__(self,HandlerList,**settings)
         
         
 def main():
